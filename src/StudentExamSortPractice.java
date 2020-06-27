@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static java.util.Arrays.sort;
 
@@ -83,13 +85,21 @@ public class StudentExamSortPractice {
         System.out.println("The Unsorted array of students is");
         ob.printArray(arr);
 
+        /*
+
         // apply Bubble Sort
         System.out.println("The Student array sorted using Bubblesort");
         ob.doOptimisedBubbleSort(arr,"mark");
         ob.printArray(arr);
 
+        */
 
+        // apply built-in Java sort
+        sort(arr);
+        System.out.println("The Student array sorted using built in Java Sorts is");
+        ob.printArray(arr);
         int failedCount =0;
+
 
         for (Student each : arr){
             if (each.getMark() < 50){
@@ -104,22 +114,19 @@ public class StudentExamSortPractice {
         }
 
 
-
         System.out.println("The students that failed are: ");
         ob.printArray(failedArr);
         System.out.println("The failed students sorted by ID: ");
-        ob.doOptimisedBubbleSort(failedArr,"id");
+        //ob.doOptimisedBubbleSort(failedArr,"id");
+        sort(failedArr);  // not working - only sorts by Marks still :|
         ob.printArray(failedArr);
 
 
 
 
-        /*
-        // apply built-in Java sort
-        sort(arr);
-        System.out.println("The Student array sorted using built in Java Sorts is");
-        ob.printArray(arr);
-        */
+
+
+
 
     }
 }

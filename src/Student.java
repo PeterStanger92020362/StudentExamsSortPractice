@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-
-public class Student extends ArrayList<Student> implements Comparable{
+public class Student implements Comparable{
 
     private String name;
     private int ID;
@@ -35,9 +33,15 @@ public class Student extends ArrayList<Student> implements Comparable{
     @Override
     public int compareTo(Object o) {
         Student e = (Student) o;
+
         return getMark() - e.getMark();
         //return getName().compareTo(e.getName());  //sort by Student name
-        //return this.getRating() - e.getRating();  // Sort by Rating
+        //return getID() - e.getID();
+    }
+
+    public int sortByMarks(Object o) {
+        Student e = (Student) o;
+        return getMark() - e.getMark();
     }
 
 
