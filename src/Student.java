@@ -1,4 +1,6 @@
-public class Student implements Comparable{
+import java.util.ArrayList;
+
+public class Student extends ArrayList<Student> implements Comparable{
 
     private String name;
     private int ID;
@@ -16,6 +18,18 @@ public class Student implements Comparable{
         return mark;
     }
 
+    public int getChosenData(String criteria){
+        if (criteria.toLowerCase().equals("id")){
+            return ID;
+        }
+        else if (criteria.toLowerCase().equals("mark")){
+            return mark;
+        }
+        else {
+            System.out.println("Bad data type specified");
+            return 0;
+        }
+    }
 
 
     @Override
